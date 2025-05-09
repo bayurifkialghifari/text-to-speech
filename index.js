@@ -22,7 +22,7 @@ app.post("/tts", (req, res) => {
   const text = req.body.text;
   const lang = req.body.lang || "en";
   const gtts = new gTTS(text, lang);
-  const filename = `public/${moment().format("YYYYMMDD_HHmmss")}.wav`;
+  const filename = `public/${moment().format("YYYYMMDD_HHmmss")}.mp3`;
   gtts.save(filename, function (err, result) {
     if (err) {
       return res.status(500).send(err);
