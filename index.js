@@ -27,11 +27,7 @@ app.post("/tts", (req, res) => {
     if (err) {
       return res.status(500).send(err);
     }
-
-    res.send({
-      message: "Text to speech conversion successful",
-      filename: filename,
-    });
+    res.download(filename);
   });
 });
 
